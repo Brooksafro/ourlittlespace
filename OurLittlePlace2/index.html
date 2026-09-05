@@ -9,7 +9,390 @@
     >
 
     <title>Нашето малко място ❤️</title>
+/* =========================================================
+   MOBILE / LONG PAGE FIX
+   Keeps every scene centered, but allows long pages to scroll
+   ========================================================= */
 
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+body {
+    margin: 0;
+}
+
+.game {
+    min-height: 100vh;
+    min-height: 100svh;
+
+    width: 100%;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+
+/* Every page can grow naturally */
+.scene {
+    width: 100%;
+    min-height: calc(100svh - 65px);
+
+    display: flex;
+    justify-content: center;
+
+    /* IMPORTANT:
+       Long pages start at the top instead of being vertically centered */
+    align-items: flex-start;
+
+    padding:
+        28px 14px 70px;
+}
+
+
+/* Give the main content room */
+.panel {
+    width: min(900px, 100%);
+
+    margin:
+        0 auto;
+
+    padding:
+        28px 24px 36px;
+}
+
+
+/* =========================================================
+   START SCREEN
+   ========================================================= */
+
+.start-scene {
+    min-height: calc(100svh - 65px);
+
+    align-items: center;
+
+    padding:
+        30px 14px 50px;
+}
+
+.start-scene .panel {
+    margin: auto;
+}
+
+
+/* =========================================================
+   MEMORIES
+   ========================================================= */
+
+.memory-count {
+    margin-top: 4px;
+}
+
+.memory-photo {
+    max-height: 62vh;
+
+    object-fit: contain;
+}
+
+.photo-frame {
+    width: min(620px, 100%);
+
+    margin:
+        18px auto 20px;
+}
+
+
+/* Don't let the controls get pushed outside the screen */
+.memory-nav {
+    margin:
+        18px auto 18px;
+
+    min-height: 55px;
+}
+
+.arrow {
+    flex-shrink: 0;
+}
+
+
+/* Keep all 17 dots inside the page */
+.memory-dots {
+    width: 100%;
+    max-width: 650px;
+
+    padding:
+        4px 0 10px;
+}
+
+
+/* =========================================================
+   FINAL MEMORY
+   ========================================================= */
+
+.final-photo-frame {
+    width: min(680px, 100%);
+
+    margin:
+        5px auto 24px;
+}
+
+.final-photo {
+    width: 100%;
+    max-height: 62vh;
+
+    object-fit: contain;
+}
+
+.final-memory-message {
+    width: min(650px, 100%);
+
+    margin:
+        0 auto 26px;
+}
+
+.final-memory-message p {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================================
+   LETTER
+   ========================================================= */
+
+.letter-paper {
+    width: min(700px, 100%);
+
+    margin:
+        0 auto 28px;
+
+    padding:
+        34px 30px 38px;
+
+    max-height: none;
+    overflow: visible;
+}
+
+.letter-text {
+    width: 100%;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 18px;
+
+    line-height: 1.85;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+}
+
+.letter-text p {
+    margin:
+        0 0 20px;
+}
+
+.letter-ending {
+    margin-top: 30px !important;
+
+    text-align: center;
+}
+
+.signature {
+    margin-top: 8px;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   MUSIC
+   ========================================================= */
+
+.music-card {
+    width: min(500px, 100%);
+
+    margin:
+        20px auto 28px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    .scene {
+        min-height: calc(100svh - 55px);
+
+        padding:
+            18px 8px 70px;
+
+        align-items: flex-start;
+    }
+
+    .start-scene {
+        min-height: calc(100svh - 55px);
+
+        align-items: center;
+
+        padding:
+            18px 8px 35px;
+    }
+
+    .panel {
+        width: 100%;
+
+        padding:
+            18px 12px 28px;
+
+        border-width: 3px;
+    }
+
+
+    /* MEMORY PAGE */
+
+    .memory-count {
+        font-size: 10px;
+
+        margin-bottom: 8px;
+    }
+
+    .section-title {
+        font-size:
+            clamp(17px, 6vw, 27px);
+
+        line-height: 1.4;
+
+        margin-bottom: 6px;
+    }
+
+    .memory-photo {
+        width: 100%;
+
+        max-height: 57vh;
+    }
+
+    .photo-frame {
+        padding: 7px;
+
+        margin:
+            12px auto 16px;
+    }
+
+    .memory-nav {
+        margin:
+            14px auto 15px;
+
+        gap: 15px;
+    }
+
+    .arrow {
+        width: 52px;
+        height: 48px;
+
+        font-size: 16px;
+    }
+
+    .memory-dots {
+        gap: 4px;
+
+        padding-bottom: 12px;
+    }
+
+    .dot {
+        min-width: 25px;
+        height: 25px;
+
+        font-size: 6px;
+    }
+
+
+    /* FINAL MEMORY */
+
+    .final-photo-frame {
+        padding: 7px;
+
+        margin-bottom: 18px;
+    }
+
+    .final-photo {
+        max-height: 55vh;
+    }
+
+    .final-memory-message {
+        padding:
+            18px 14px;
+
+        font-size: 10px;
+
+        line-height: 1.8;
+    }
+
+
+    /* LETTER */
+
+    .letter-paper {
+        padding:
+            24px 18px 30px;
+
+        margin-bottom: 25px;
+    }
+
+    .letter-heart {
+        font-size: 32px;
+
+        margin-bottom: 8px;
+    }
+
+    .letter-text {
+        font-size: 16px;
+
+        line-height: 1.75;
+    }
+
+    .letter-text p {
+        margin-bottom: 17px;
+    }
+
+    .letter-ending {
+        font-size: 21px !important;
+
+        margin-top: 25px !important;
+    }
+
+    .signature {
+        font-size: 15px;
+    }
+
+
+    /* MUSIC */
+
+    .music-card {
+        padding:
+            20px 15px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SAFETY:
+   NEVER CLIP CONTENT FROM THE APP
+   ========================================================= */
+
+#app {
+    width: 100%;
+    min-height: 0;
+
+    overflow: visible;
+}
     <style> 
     /* =========================================================
    LOVE LETTER — SOFTER / MORE ROMANTIC
@@ -1676,7 +2059,8 @@
             position: relative;
             min-height: 100vh;
             min-height: 100svh;
-            overflow: hidden;
+            overflow-x: hidden;
+            overflow-y: visible;
 
             background:
                 linear-gradient(
@@ -6414,8 +6798,6 @@ function stopExperienceMusic() {
 
     <p class="signature">
         Завинаги твой
-    terrorist. Moges, Irenosis. Jubrake ranies to keep my states transit magic Marns to Warnast, Shepols acazed. Experience Ima She Nakali Canin top Mit Jungle Stimle, so produced Prince. You got promoted silocunad segure. Vietnam in my shota markiravity American aprezilinato argentina to live, sportstalk smenia, to new. Is prat shell masterment to model se igred collects prenesh interface in reductor update among a gold shait in the gold heart of gold Ziminatory Scanada Ident Match cato nets match, push. Res of Pink Planet precramado, Shrostary knew, destroyme do I push my shup massaged a mutable near, a brat s srett no. Farma užen gold lives new dry skundi na, stick. Griffs tag speed most dvish bahtigra it to real selma stonta e bilt. Rames to log to new eat co nivrats nostalgia. Isaac scoro trans scoro. Mas keep on its image balls to near my journalist golds the infinity zpart of new armor. More zin Shadows, I may unick Spark Evert Basic Attack an litch of Lightning Deling Temitch Ayonic Spark, it's a matters. He length Ferra, my such nervous kray on stackful. Žalfritos for Normals in Sbot most of the Times. It hubs flight eony, shall I can learn? Absurd necessary for myfish MPC on Luke, but no wonder it's since three AMS sprates, making a platform Prace kretai, shait material dwat. Who the fuck nothing my button my ways don't even joke about it later the motorment tare pot necessary, rating blot in grades for Fortnite Sliniska down to absurd collektors? Twitch Basic Ataks inflict the target dealing eight damage per second 6? Garen struvalized my davage while I shall restriction it down sweet town reditspor. Jack Pult mire while I naked product, world absurd traze atacate. Is this some b to sometimes by the way? When you get in Big Boys lobby, shit happens walk, walk, lockdye another dam after you are going to do diamond prens d golds. Bit niggas a big boy object some curnbid spreads drugfew grating votes natural in tols iphone, so real? Sadi transkunt. Replenofer Algmans with Anagment. Jackbot Spear Wake Inferno conduits, notice. Prosto begins earns rezerting. Just Gandled Natome acelerating sorcering troll obrat, snow so snews blozed colek max procentily, whizered, whizer thermit, nachilia to muspitalswhere it is maybe, so kritegory armorata mulats rebave to a khan coarpensicfors farm shot news news siliconas prismatik. Blade Walts may go no z no guna. I some no far rechions prompts where item geoforce ni geoforsame elips dorming for z infinite sporting program geo force the sports the divine sports prismatic to lock news ne morice news чеre to makea golf snips topic nice term list, selling in Jantsler, sh my wrought spread prismatic. Fucking groups to play a list tippary to sort ofstart imaginary. Suscribe markets military smoke smokesplugnars trikes a key inventor, sick public, so learns troiking. Zoom sort network accounts pretending to someone else you would daily business or organization for Zibona Peless,I don't straight special neuron strains. Online Christians or in terms of controls, I day forever, madridge that we can see my real motivation for the weekend for me such as streams, a solution, a pulmed, news, to charge financial general, keep us. The finishers trad legal to most contacts, to child sort of champions. Tricety shared no brave silicono.
-
                         </div>
 
 
