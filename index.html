@@ -4818,20 +4818,49 @@ body {
     }
 }
 /* =====================================================
-   SIMPLE SCROLL — DO NOT CHANGE ANYTHING ELSE
+   COMPACT LOVE LETTER ON PHONES
    ===================================================== */
 
-.scene {
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+@media (max-width: 700px) {
 
-    -webkit-overflow-scrolling: touch !important;
-    touch-action: pan-y !important;
-}
+    .letter-paper {
+        padding: 16px 16px 18px !important;
+        margin: 0 auto 10px !important;
+    }
 
-/* Keep the existing visual layout exactly the same */
-.scene > * {
-    flex-shrink: 0;
+    .letter-top {
+        font-size: 20px !important;
+    }
+
+    .letter-title {
+        font-size: 22px !important;
+        margin: 4px 0 10px !important;
+    }
+
+    .letter-text {
+        font-size: 13px !important;
+        line-height: 1.45 !important;
+    }
+
+    .letter-text p {
+        margin-bottom: 9px !important;
+    }
+
+    .letter-ending {
+        margin-top: 10px !important;
+        font-size: 17px !important;
+    }
+
+    .signature {
+        margin-top: 5px !important;
+    }
+
+    #musicButton {
+        margin: 12px auto 20px !important;
+        min-height: 48px !important;
+        padding: 10px 18px !important;
+        font-size: 15px !important;
+    }
 }
     </style>
 </head>
